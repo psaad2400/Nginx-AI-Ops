@@ -150,13 +150,14 @@ Each step of the agent is tracked and visible in the Temporal dashboard at **htt
 ### Step 3 — Format Answer
 <!-- Screenshot of format_answer activity -->
 ![Step 3](../docs/screenshots/format-answer-output.png)
+
+
+## ✅ Proof of Work
+
+### Splunk Query History
+> Queries automatically generated and executed by the AI agent
+
+![Splunk Query History](../docs/screenshots/Splunk-dashboard-showing-all-agentic-ai-query-execution.png)
+
 ```
 
----
-
-**Name your screenshot files exactly like this in `docs/screenshots/`:**
-```
-temporal_ui.png          ← main dashboard
-temporal_step1.png       ← generate query activity
-temporal_step2.png       ← execute splunk activity
-temporal_step3.png       ← format answer activity
