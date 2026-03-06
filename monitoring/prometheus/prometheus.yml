@@ -1,0 +1,22 @@
+# prometheus.yml
+# Prometheus configuration for scraping VM metrics via Node Exporter.
+# Location: /etc/prometheus/prometheus.yml
+
+global:
+  scrape_interval:     15s   # scrape every 15 seconds
+  evaluation_interval: 15s   # evaluate rules every 15 seconds
+
+scrape_configs:
+
+  # ── Prometheus self-monitoring ──────────────────────────────────────────────
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # ── Node Exporter — VM system metrics ──────────────────────────────────────
+  # Collects: CPU, RAM, Disk, Network from the VM running Node Exporter
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']   # Node Exporter default port
+        labels:
+          nodename: 'ubuntu'     
